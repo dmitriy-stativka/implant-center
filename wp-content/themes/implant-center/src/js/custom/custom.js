@@ -7,7 +7,6 @@ const body = document.body; // body
 const width = document.documentElement.clientWidth;
 
 
-
 for (const mobileBurger of mobileBurgers) {
   mobileBurger.addEventListener('click', function(){
     mobileBurger.classList.toggle('active');

@@ -9,10 +9,13 @@ add_action( 'wp_enqueue_scripts', function(){
     wp_register_script( 'gsap1', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js', array(), null, false );
     wp_register_script( 'gsap2', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollToPlugin.min.js', array(), null, false );
     wp_register_script( 'gsap3', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js', array(), null, false );
+    wp_register_script( 'swiper', get_template_directory_uri() . '/src/js/vendor/swiper.min.js', array(), null, false );
     wp_enqueue_script( 'jquery');
     wp_enqueue_script( 'gsap1');
     wp_enqueue_script( 'gsap2');
     wp_enqueue_script( 'gsap3');
+    wp_enqueue_script( 'swiper');
+
 });
 
 function global_scripts() {

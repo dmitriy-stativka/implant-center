@@ -1,14 +1,10 @@
-@import "partials/mixins";
-@import "partials/variables";
-@import "partials/fonts";
-@import "partials/buttons";
-@import "partials/reset";
-@import "partials/typography";
 
-@import "partials/header";
-@import "partials/footer";
-@import "partials/general";
-@import "partials/modal";
+@import "partials/variables";
+@import "partials/_normalize";
+@import "partials/_swiper";
+@import "partials/_select";
+@import "partials/_global";
+@import "partials/fonts";
 
 
 @import "implant_style/buttons";
@@ -26,6 +22,7 @@
 @import "implant_style/our-find";
 @import "implant_style/our-medic";
 @import "implant_style/pas-section";
+@import "implant_style/service-list";
 @import "implant_style/media";
 
 
