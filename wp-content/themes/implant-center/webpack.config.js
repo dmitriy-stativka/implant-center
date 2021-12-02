@@ -15,15 +15,15 @@ module.exports = {
     },
 
 
-    // plugins: [
-    //     new webpack.DefinePlugin({
-    //         NODE_ENV: JSON.stringify(NODE_ENV)
-    //     }),
-    //     new ExtractTextPlugin("style.css"),
-    //     new webpack.ProvidePlugin({
-    //         Promise: 'es6-promise-promise'
-    //     })
-    // ],
+    plugins: [
+        new webpack.DefinePlugin({
+            NODE_ENV: JSON.stringify(NODE_ENV)
+        }),
+        new ExtractTextPlugin("style.css"),
+        new webpack.ProvidePlugin({
+            Promise: 'es6-promise-promise'
+        })
+    ],
 
     module: {
 
@@ -46,45 +46,47 @@ module.exports = {
                 loader: "eslint-loader"
             },
 
-            // {
-            //     test: /\.s?css$/,
-            //     use: ExtractTextPlugin.extract({
-            //         fallback: 'style-loader',
-            //         use: [
-            //             {
-            //                 loader: 'css-loader',
-            //                 options: {
-            //                     sourceMap: NODE_ENV == 'development',
-            //                     minimize: NODE_ENV == 'production'
-            //                 }
-            //             },
-            //             {
-            //                 loader: 'resolve-url-loader',
-            //                 options: {
-            //                     sourceMap: NODE_ENV == 'development'
-            //                 }
-            //             },
-            //             {
-            //                 loader: 'postcss-loader',
-            //                 options: {
-            //                     plugins: [
-            //                         autoprefixer({
-            //                             browsers: ['last 4 version']
-            //                         })
-            //                     ],
-            //                     sourceMap: 'inline'
-            //                 }
-            //             },
-            //             {
-            //                 loader: 'sass-loader',
-            //                 options: {
-            //                     sourceMap: NODE_ENV == 'development'
-            //                 }
-            //             }
-            //         ]
-            //     })
+            {
+                test: /\.s?css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: NODE_ENV == 'development',
+                                minimize: NODE_ENV == 'production'
+                            }
+                        },
+                        {
+                            loader: 'resolve-url-loader',
+                            options: {
+                                sourceMap: NODE_ENV == 'development'
+                            }
+                        },
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                plugins: [
+                                    autoprefixer({
+                                        browsers: ['last 4 version']
+                                    })
+                                ],
+                                sourceMap: 'inline'
+                            }
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: NODE_ENV == 'development'
+                            }
+                        }
+                    ]
+                })
 
-            // },
+            },
+
+
 
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/,
